@@ -1,5 +1,13 @@
 const pool = require('./pool');
 
+
+function getDayOfWeek(date) {
+  const daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+  const dateObj = new Date(date);
+  return daysOfWeek[dateObj.getDay()];
+}
+
+
 // Получение расписания по имени и фамилии
 async function getSchedule(name, surname) {
     const query = `
